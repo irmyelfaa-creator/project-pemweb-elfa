@@ -55,13 +55,10 @@ var keranjang = [];
 function formatHarga(harga) {
 
     return "Rp" + harga.toLocaleString("id-ID");
-
 }
 
 function tampilkanAlbum() {
-
     var daftar = document.getElementById("daftarAlbum");
-
     if (daftar == null) {
         return;
     }
@@ -119,10 +116,8 @@ function tampilkanAlbum() {
 }
 
 function tampilkanPilihan() {
-
     var daftar =
         document.getElementById("albumPilihan");
-
 
     if (daftar == null) {
         return;
@@ -167,9 +162,7 @@ function tampilkanPilihan() {
 
 
 function lihatDetail(index) {
-
     var data = album[index];
-
     Swal.fire({
 
         title: data.nama,
@@ -205,13 +198,9 @@ function lihatDetail(index) {
         `,
 
         showCancelButton: true,
-
         confirmButtonText: "Masukkan ke Keranjang",
-
         cancelButtonText: "Tutup",
-
         confirmButtonColor: "#d84d91",
-
         cancelButtonColor: "#8a7b84"
 
     }).then(function(hasil) {
@@ -245,58 +234,40 @@ function masukkanKeranjang(index) {
     });
 
     if (sudahAda == false) {
-
         keranjang.push({
-
             nama: albumDipilih.nama,
-
             grup: albumDipilih.grup,
-
             harga: albumDipilih.harga,
-
             gambar: albumDipilih.gambar,
-
             jumlah: 1
-
         });
 
     }
 
     tampilkanKeranjang();
-
     Swal.fire({
 
         icon: "success",
-
         title: "Berhasil! 💖",
-
         text: albumDipilih.nama +
               " berhasil dimasukkan ke keranjang.",
 
         confirmButtonText: "Oke",
-
         confirmButtonColor: "#d84d91",
-
         timer: 1800,
-
         timerProgressBar: true
-
     });
-
 }
 
 function tampilkanKeranjang() {
-
     var isi =
         document.getElementById("isiKeranjang");
-
 
     if (isi == null) {
         return;
     }
 
     isi.innerHTML = "";
-
     if (keranjang.length == 0) {
 
         isi.innerHTML = `
@@ -319,11 +290,8 @@ function tampilkanKeranjang() {
     }
 
     else {
-
         keranjang.forEach(function(data, index) {
-
             isi.innerHTML += `
-
                 <div class="item-keranjang">
 
                     <img
@@ -384,34 +352,24 @@ function tampilkanKeranjang() {
 }
 
 function tambahJumlah(index) {
-
     keranjang[index].jumlah++;
-
     tampilkanKeranjang();
-
 }
 
 function kurangiJumlah(index) {
-
     if (keranjang[index].jumlah > 1) {
-
         keranjang[index].jumlah--;
-
     } 
     
     else {
-
         hapusKeranjang(index);
-
         return;
-
     }
 
     tampilkanKeranjang();
 }
 
 function hapusKeranjang(index) {
-
     var namaAlbum =
         keranjang[index].nama;
 
@@ -426,17 +384,12 @@ function hapusKeranjang(index) {
         icon: "warning",
 
         showCancelButton: true,
-
         confirmButtonText: "Ya, hapus",
-
         cancelButtonText: "Batal",
-
         confirmButtonColor: "#d84d91",
-
         cancelButtonColor: "#8a7b84"
 
     }).then(function(hasil) {
-
         if (hasil.isConfirmed) {
 
             keranjang.splice(index, 1);
@@ -465,9 +418,7 @@ function hapusKeranjang(index) {
 }
 
 function hitungTotal() {
-
     var total = 0;
-
     keranjang.forEach(function(data) {
 
         total += data.harga * data.jumlah;
@@ -530,14 +481,10 @@ if (formPembelian != null) {
                 Swal.fire({
 
                     icon: "warning",
-
                     title: "Nama belum diisi",
-
                     text:
                         "Silakan masukkan nama pembeli.",
-
                     confirmButtonColor: "#d84d91"
-
                 });
 
                 return;
@@ -556,7 +503,6 @@ if (formPembelian != null) {
                         "Silakan pilih metode pembayaran.",
 
                     confirmButtonColor: "#d84d91"
-
                 });
 
                 return;
@@ -571,9 +517,7 @@ if (formPembelian != null) {
             Swal.fire({
 
                 icon: "success",
-
                 title: "Pesanan Berhasil! 💗",
-
                 html: `
 
                     <p>
@@ -606,9 +550,7 @@ if (formPembelian != null) {
             });
 
             keranjang = [];
-
             tampilkanKeranjang();
-
             formPembelian.reset();
 
         }
