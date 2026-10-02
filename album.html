@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Album - K-ALBUM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <header class="kepala">
+        <div class="logo">
+
+            <h1>K-ALBUM</h1>
+
+            <p>Toko Album K-Pop</p>
+
+        </div>
+
+        <nav>
+            <a href="index.html">
+                Beranda
+            </a>
+
+            <a href="album.html" class="aktif">
+                Album
+            </a>
+
+            <a href="tentang.html">
+                Tentang
+            </a>
+
+            <a href="kontak.html">
+                Kontak
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="judul-halaman">
+            <p>KOLEKSI</p>
+
+            <h2>Album K-Pop</h2>
+
+            <span>
+                Pilih album favoritmu dan
+                masukkan ke keranjang.
+            </span>
+        </section>
+
+        <section>
+            <div id="daftarAlbum" class="kartu-album">
+
+            </div>
+
+        </section>
+
+        <section class="keranjang">
+
+            <div class="judul-bagian">
+
+                <p>PEMBELIAN</p>
+
+                <h2>Keranjang Kamu</h2>
+
+            </div>
+
+            <div id="isiKeranjang">
+                <div class="keranjang-kosong">
+                    <div>🛒</div>
+
+                    <p>
+                        Keranjang masih kosong.
+                    </p>
+
+                    <span>
+                        Silakan pilih album terlebih dahulu.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="ringkasan">
+                
+                <div>
+                    <span>
+                        Total Pembelian
+                    </span>
+
+                    <strong id="totalHarga">
+                        Rp0
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <form id="formPembelian"
+                  class="form-pembelian">
+
+                <div class="judul-form">
+
+                    <h3>
+                        Data Pembelian
+                    </h3>
+
+                    <p>
+                        Isi data berikut untuk
+                        melakukan pemesanan.
+                    </p>
+
+                </div>
+
+                <div class="kelompok-form">
+
+                    <label for="namaPembeli">
+                        Nama Pembeli
+                    </label>
+
+                    <input
+                        type="text"
+                        id="namaPembeli"
+                        placeholder="Masukkan nama kamu"
+                        required
+                    >
+
+                </div>
+
+                <div class="kelompok-form">
+
+                    <label for="metodePembayaran">
+                        Metode Pembayaran
+                    </label>
+
+                    <select id="metodePembayaran" required>
+
+                        <option value="">
+                            Pilih metode pembayaran
+                        </option>
+
+                        <option value="Transfer Bank">
+                            Transfer Bank
+                        </option>
+
+                        <option value="E-Wallet">
+                            E-Wallet
+                        </option>
+
+                        <option value="COD">
+                            COD
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="tombol utama tombol-pesan">
+
+                    Pesan Sekarang
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <h3>K-ALBUM</h3>
+
+        <p>
+            Toko album K-Pop sederhana
+            untuk para penggemar.
+        </p>
+
+        <p>
+            © 2026 K-ALBUM
+        </p>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
