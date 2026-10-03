@@ -98,7 +98,11 @@ function tampilkanAlbum() {
                         <button
                             class="tombol"
                             onclick="masukkanKeranjang(${index})">
+<<<<<<< HEAD
                             Masukkan Keranjang
+=======
+                            Masukkan
+>>>>>>> b12c0c2 (Update file)
                         </button>
                     </div>
                 </div>
@@ -363,17 +367,12 @@ function hapusKeranjang(index) {
             Swal.fire({
 
                 icon: "success",
-
                 title: "Album dihapus",
-
                 text:
                     namaAlbum +
                     " sudah dihapus dari keranjang.",
-
                 confirmButtonColor: "#d84d91",
-
                 timer: 1500,
-
                 showConfirmButton: false
 
             });
@@ -426,18 +425,13 @@ if (formPembelian != null) {
                 Swal.fire({
 
                     icon: "warning",
-
                     title: "Keranjang masih kosong",
-
                     text:
                         "Silakan pilih album terlebih dahulu.",
-
                     confirmButtonColor: "#d84d91"
-
                 });
 
                 return;
-
             }
 
             if (nama == "") {
@@ -459,13 +453,10 @@ if (formPembelian != null) {
                 Swal.fire({
 
                     icon: "warning",
-
                     title:
                         "Metode pembayaran belum dipilih",
-
                     text:
                         "Silakan pilih metode pembayaran.",
-
                     confirmButtonColor: "#d84d91"
                 });
 
@@ -476,7 +467,6 @@ if (formPembelian != null) {
                 document.getElementById(
                     "totalHarga"
                 ).innerHTML;
-
 
             Swal.fire({
 
@@ -539,17 +529,13 @@ if (formKontak != null) {
             Swal.fire({
 
                 icon: "success",
-
                 title: "Pesan Berhasil Dikirim! 💌",
-
                 text:
                     "Terima kasih " +
                     nama +
                     ". Pesan kamu sudah diterima.",
-
                 confirmButtonText:
                     "Oke",
-
                 confirmButtonColor:
                     "#d84d91"
             });
