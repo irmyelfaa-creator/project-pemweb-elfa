@@ -98,11 +98,7 @@ function tampilkanAlbum() {
                         <button
                             class="tombol"
                             onclick="masukkanKeranjang(${index})">
-<<<<<<< HEAD
                             Masukkan Keranjang
-=======
-                            Masukkan
->>>>>>> b12c0c2 (Update file)
                         </button>
                     </div>
                 </div>
