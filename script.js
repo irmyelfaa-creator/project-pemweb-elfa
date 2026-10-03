@@ -5,7 +5,7 @@ var album = [
         grup: "ENHYPEN",
         harga: 350000,
         gambar: "enhypen.jpg",
-        deskripsi: "Album K-Pop dari ENHYPEN dengan konsep yang menarik."
+        deskripsi: "Album K-Pop dari ENHYPEN dengan konsep yang gelap dan misterius."
     },
 
     {
@@ -13,7 +13,7 @@ var album = [
         grup: "CORTIS",
         harga: 300000,
         gambar: "cortis.jpg",
-        deskripsi: "Album CORTIS dengan koleksi lagu pilihan."
+        deskripsi: "Album CORTIS dengan konsep yang menarik dan modern."
     },
 
     {
@@ -45,7 +45,7 @@ var album = [
         grup: "ILLIT",
         harga: 340000,
         gambar: "illit.jpg",
-        deskripsi: "Album ILLIT dengan konsep yang elegan dan menarik."
+        deskripsi: "Album ILLIT dengan konsep yang elegan dan lembut."
     }
 
 ];
@@ -68,13 +68,10 @@ function tampilkanAlbum() {
     album.forEach(function(data, index) {
 
         daftar.innerHTML += `
-
             <article class="kartu">
-
                 <img
                     src="${data.gambar}"
-                    alt="Sampul album ${data.nama}"
-                >
+                    alt="Sampul album ${data.nama}">
 
                 <div class="isi-kartu">
 
@@ -94,22 +91,17 @@ function tampilkanAlbum() {
 
                         <button
                             class="tombol tombol-detail"
-                            onclick="lihatDetail(${index})"
-                        >
+                            onclick="lihatDetail(${index})">
                             Lihat Detail
                         </button>
 
                         <button
                             class="tombol"
-                            onclick="masukkanKeranjang(${index})"
-                        >
-                            Masukkan
+                            onclick="masukkanKeranjang(${index})">
+                            Masukkan Keranjang
                         </button>
-
                     </div>
-
                 </div>
-
             </article>
         `;
     });
@@ -130,11 +122,9 @@ function tampilkanPilihan() {
         daftar.innerHTML += `
 
             <article class="kartu">
-
                 <img
                     src="${album[i].gambar}"
-                    alt="Sampul ${album[i].nama}"
-                >
+                    alt="Sampul ${album[i].nama}">
 
                 <div class="isi-kartu">
 
@@ -149,15 +139,10 @@ function tampilkanPilihan() {
                     <p class="harga">
                         ${formatHarga(album[i].harga)}
                     </p>
-
                 </div>
-
             </article>
-
         `;
-
     }
-
 }
 
 
@@ -177,9 +162,7 @@ function lihatDetail(index) {
                     height:220px;
                     object-fit:cover;
                     border-radius:12px;
-                    margin-bottom:15px;
-                "
-            >
+                    margin-bottom:15px;">
 
             <p>
                 <strong>${data.grup}</strong>
@@ -208,29 +191,19 @@ function lihatDetail(index) {
         if (hasil.isConfirmed) {
 
             masukkanKeranjang(index);
-
         }
-
     });
-
 }
 
 function masukkanKeranjang(index) {
-
     var albumDipilih = album[index];
-
     var sudahAda = false;
-
     keranjang.forEach(function(data) {
 
         if (data.nama == albumDipilih.nama) {
-
             data.jumlah++;
-
             sudahAda = true;
-
         }
-
     });
 
     if (sudahAda == false) {
@@ -283,9 +256,7 @@ function tampilkanKeranjang() {
                 <span>
                     Silakan pilih album terlebih dahulu.
                 </span>
-
             </div>
-
         `;
     }
 
@@ -296,8 +267,7 @@ function tampilkanKeranjang() {
 
                     <img
                         src="${data.gambar}"
-                        alt="${data.nama}"
-                    >
+                        alt="${data.nama}">
 
                     <div class="info-keranjang">
 
@@ -318,8 +288,7 @@ function tampilkanKeranjang() {
                     <div class="kontrol-jumlah">
 
                         <button
-                            onclick="kurangiJumlah(${index})"
-                        >
+                            onclick="kurangiJumlah(${index})">
                             -
                         </button>
 
@@ -328,8 +297,7 @@ function tampilkanKeranjang() {
                         </span>
 
                         <button
-                            onclick="tambahJumlah(${index})"
-                        >
+                            onclick="tambahJumlah(${index})">
                             +
                         </button>
 
@@ -337,15 +305,11 @@ function tampilkanKeranjang() {
 
                     <button
                         class="hapus"
-                        onclick="hapusKeranjang(${index})"
-                    >
+                        onclick="hapusKeranjang(${index})">
                         Hapus
                     </button>
-
                 </div>
-
             `;
-
         });
     }
     hitungTotal();
@@ -552,7 +516,6 @@ if (formPembelian != null) {
             keranjang = [];
             tampilkanKeranjang();
             formPembelian.reset();
-
         }
     );
 }
